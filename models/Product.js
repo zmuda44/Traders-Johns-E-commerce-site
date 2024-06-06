@@ -23,6 +23,13 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    category_id: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'category',
+        key: 'id',
+      }
+    }
   },
   {
     sequelize,
