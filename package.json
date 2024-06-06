@@ -1,0 +1,16 @@
+{
+  "name": "e-commerce-group-e",
+  "version": "1.0.0",
+  "description": "This will be the first repository to for the project 2 group project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
