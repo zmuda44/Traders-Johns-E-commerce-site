@@ -3,12 +3,12 @@ const Category = require('./Category');
 
 Category.hasMany(Product, {
   foreignKey: 'category_id',
-  onDelete: 'CASECADE'
+  onDelete: 'CASCADE'
 });
 
 Product.belongsTo(Category, {
   foreignKey: 'category_id',
-  onDelete: 'CASECADE'
+  onDelete: 'CASCADE'
 })
 
 module.exports = { 
