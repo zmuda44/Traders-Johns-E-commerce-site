@@ -1,4 +1,3 @@
-
 const seedProducts = require('./product-seeds');
 const sequelize = require('../config/connection');
 
