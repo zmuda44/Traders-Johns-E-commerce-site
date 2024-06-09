@@ -12,10 +12,10 @@
 /* Begin header section */
 
 header {
-    margin: 2rem 0;
+    margin: 20px 0;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    padding: 2rem;
+    padding: 20px;
 }
 
 header .container {
@@ -41,10 +41,24 @@ header .container {
 }
 
 .card h3 {
-    margin: 1rem 0;
+    margin: 2px 0;
 }
 
 .card p {
-    margin: .25rem 0;
+    margin: 5px 0;
 }
 
+
+/* Login and Sign up forms */
+
+.login-signup-section {
+    border: solid green;
+}
+
+.login {
+    background-color: yellow
+}
+
+.signup {
+    border: solid red;
+}
