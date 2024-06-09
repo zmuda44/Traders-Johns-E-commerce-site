@@ -1,6 +1,19 @@
-<div id="card-container">
-  <div id="card">
-    <br>
-    We are sorry, you have not signed in yet
-  </div>
+<h2>Current Products</h2>
+  {{!-- <p>make if then statement to say login to see prices</p> --}}
+
+<div class="card-container">
+  {{!-- Show current products as cards. If logged in, show prices, otherwise do not show prices. --}}  
+    {{#each products as |product|}}
+      <div class="card">
+        <p class="product-id">Product id: {{id}}</p>     
+        <h3 class="product-name">{{product_name}}</h3>     
+        <p class="product-description">{{description}}</p>     
+        <p class="product-price">$ {{price}} </p>     
+        <p class="product-category">Category</p>  
+      </div>      
+    {{/each}}    
 </div>
+
+
+
+
