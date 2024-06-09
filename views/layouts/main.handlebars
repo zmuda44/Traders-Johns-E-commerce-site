@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Traders Johns' Organic Food Marketplace</title>
 </head>
 <body>
@@ -16,29 +17,7 @@
 
   {{!-- Begin main section --}}
   <main>
-
-
-
-
-
+    <div class="container">{{{ body }}}</div>
   </main>
-
-  <div class="login">
-  <form action="POST" id="login-form">
-    <label for="user-name">user name</label>
-    <input type="text" id="user-name" name="user-name">
-    <label for="password">password</label>
-    <input type="text" id="password" name="password">
-    <button id="user-login"><a href="/api/user">Login</a></button>
-  
-  </form>
-  </div>
-  <br>
-  <main>
-    <div class="title">Welcome to Trader Jons. The ebay of organic Produce. Login to view prices and product details</div>
- 
-  
-  <div class="variable-seciton">{{{body}}}</div>
-   </main>
 </body>
 </html>

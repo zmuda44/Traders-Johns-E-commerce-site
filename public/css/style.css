@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;    
+}
+
+/* Begin header section */
+
+header {
+    margin: 2rem 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 2rem;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Begin main section */
+
+/* Card container */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+}
+
+.card {
+    width: 200px;
+    margin: 5px;
+    border: solid;
+    text-align: center;
+}
+
+.card h3 {
+    margin: 1rem 0;
+}
+
+.card p {
+    margin: .25rem 0;
+}
+
