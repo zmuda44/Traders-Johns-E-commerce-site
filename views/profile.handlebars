@@ -1,0 +1,68 @@
+<div class="profile-section">
+    <h2>Welcome, {{name}}!</h2>
+
+    <div class="card-container">    
+        {{#each products as |product|}}
+            <div class="card">
+                <p class="product-id">Product id: {{id}}</p>     
+                <h3 class="product-name">{{product_name}}</h3>     
+                <p class="product-description">{{description}}</p>     
+                <p class="product-price">$ {{price}} </p>     
+                <p class="product-category">Category</p>  
+            </div>      
+        {{/each}}   
+    </div>
+
+    {{!-- {{#if projects.length}}
+        <h3>Current Projects:</h3>
+
+        {{#each projects as |project|}}
+        <div class="row mb-2">
+        <div class="col-md-8">
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        </div>
+        </div>
+        {{/each}}
+
+    {{/if}} --}}
+
+    <h3>Create a New Project:</h3>
+
+    {{!-- Make categories alphabetical --}}
+
+    <form id="new-product">
+      <div class="form-section">
+        <label for="product-name">product name:</label>
+        <input type="text" id="product-name" name="product-name" />
+      </div>
+      <div class="form-section">
+        <label for="product-description">Product Description</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-section">
+        <label for="product-category">Category</label>
+        <select id="product-category" name="product-category">
+            <option value="Produce">Produce</option>
+            <option value="Meat">Meat</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Dry-Goods">Dry-Goods</option>
+            <option value="Canned-Goods">Canned-Goods</option>
+            <option value="Condiments">Condiments</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Cereal">Cereal</option>
+            <option value="Frozen-Goods">Frozen-Goods</option>
+        </select>
+      </div>
+      <div class="form-section">
+        <button type="submit" class="product-create-btn">List a new product</button>
+      </div>
+    </form>
+  </div>
+
+
+
+<script src="./js/profile.js"></script>
