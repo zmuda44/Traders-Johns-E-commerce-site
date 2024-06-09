@@ -52,13 +52,11 @@ header .container {
 /* Login and Sign up forms */
 
 .login-signup-section {
-    border: solid green;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
 }
 
-.login {
-    background-color: yellow
-}
 
-.signup {
-    border: solid red;
-}
+

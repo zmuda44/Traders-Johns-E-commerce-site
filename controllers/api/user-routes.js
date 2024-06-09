@@ -1,20 +1,20 @@
 const router = require('express').Router();
-const { Product } = require('../../models');
+const { Product, User } = require('../../models');
 
-router.get('/', async (req, res) => {
-
+router.post('/', async (req, res) => {
   try {
-    const productData = await Product.findAll();
-    const products = productData.map((product) => product.get({ plain: true }));
-    res.render('all', { products });
-  }  
-  catch (err) {
-    res.json("hello");
-  };
-  
-  
-  
-  
+    const userData = await User.create(req.body);
+
+    // req.session.save(() => {
+    //   req.session.user_id = userData.id;
+    //   req.session.logged_in = true;
+
+      
+    // });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;
