@@ -1,5 +1,6 @@
 const Product = require('./Product');
 const Category = require('./Category');
+const User = require('./User')
 
 Category.hasMany(Product, {
   onDelete: 'CASCADE'
