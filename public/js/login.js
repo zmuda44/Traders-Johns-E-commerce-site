@@ -2,6 +2,22 @@
 const loginBtn = document.getElementById("login-btn");
 const signupBtn = document.getElementById("signup-btn");
 
+const loginUser = async () => {
+    e.preventDefault();
+    const userName = docment.getElementById("login-user-name");
+    const password = document.getElementById("login-password");
+
+    if (userName && password) {
+        console.log(userName, password)
+
+        const response = await fetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({ userName, password }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+    }
+}
+
 
 const signUpUser = async function (e) {
     e.preventDefault();
@@ -28,6 +44,6 @@ const signUpUser = async function (e) {
 
 
 
-
+loginBtn.addEventListener('click', loginUser)
 
 signupBtn.addEventListener('click', signUpUser)
