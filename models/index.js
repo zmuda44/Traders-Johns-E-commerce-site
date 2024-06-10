@@ -14,4 +14,5 @@ Product.belongsTo(Category, {
 module.exports = { 
   Product,
   Category,
+  User,
 };
