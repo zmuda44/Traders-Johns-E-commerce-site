@@ -10,10 +10,12 @@ const signUpUser = async function (e) {
     const password = document.getElementById("signup-password").value.trim();
 
     if (userName && email && password) {
+        console.log(userName, email, password)
+        
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ userName, email, password }),
-            headers: { 'Content-Type': 'application/son'},            
+            headers: { 'Content-Type': 'application/json' },            
         });
         
         if (response.ok) {
