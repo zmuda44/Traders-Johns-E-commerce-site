@@ -9,15 +9,22 @@ const signUpUser = async function (e) {
     const email = document.getElementById("signup-email").value.trim();
     const password = document.getElementById("signup-password").value.trim();
 
-    if(userName && email && password) {
+    if (userName && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ userName, email, password }),
             headers: { 'Content-Type': 'application/son'},            
         });
+        
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
+        }
     }
-
 }
+
+
 
 
 
