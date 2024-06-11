@@ -21,15 +21,13 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/profile', async (req, res) => {
-    try {
-
-        const userData = await User.findByPk(req.session.user_id);
+    try {        
         const productData = await Product.findAll();
 
-        const user = userData.get({ plain: true })
+        
         const products = productData.map((product) => product.get({ plain: true }));
 
-        res.render('profile', { products, user });
+        res.render('profile', { products });
     }
     catch (err) {
         res.status(500).json(err);
