@@ -22,8 +22,10 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', async (req, res) => {
     try {        
-        const productData = await Product.findAll();
+        
 
+        
+        const productData = await Product.findAll();
         
         const products = productData.map((product) => product.get({ plain: true }));
 
