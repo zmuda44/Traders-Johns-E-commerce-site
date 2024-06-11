@@ -2,19 +2,25 @@
 const loginBtn = document.getElementById("login-btn");
 const signupBtn = document.getElementById("signup-btn");
 
-const loginUser = async () => {
+const loginUser = async (e) => {
     e.preventDefault();
-    const username = docment.getElementById("login-user-name");
-    const password = document.getElementById("login-password");
+    const username = document.getElementById("login-user-name").value;
+    const password = document.getElementById("login-password").value;
 
-    if (userName && password) {
+    if (username && password) {
         console.log(username, password)
 
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({ userName, password }),
+            body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json' },
+            credentials: 'same-origin',
         })
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
+        }
     }
 }
 
@@ -31,7 +37,8 @@ const signUpUser = async function (e) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ username, email, password }),
-            headers: { 'Content-Type': 'application/json' },            
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'same-origin',            
         });
         
         if (response.ok) {
