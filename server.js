@@ -12,8 +12,10 @@ const PORT = 3001;
 
 const hbs = exphbs.create({});
 
+require('dotenv').config()
+// Added secret variable for sess object
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESS_SECRET,
   cookie: {
     maxAge: 60 * 60 * 1_000,
     httpOnly: true,
