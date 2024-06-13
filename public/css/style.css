@@ -28,8 +28,9 @@ header .container {
 }
 
 .container h2{
+    color: white;
     display: flex;
-    padding-right: 5%;
+    padding-right: 50%;
 
 }
 
@@ -42,6 +43,7 @@ main {
 
 
 main .container{
+    background-color: rgb(180, 180, 180);
     display: flex;
     flex-wrap: wrap;
     font-style: oblique;
