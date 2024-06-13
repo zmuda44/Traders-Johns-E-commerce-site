@@ -1,30 +1,31 @@
 
 
 
-const createNewProduct = async (event) => {
+const createNewProduct = (event) => {
     event.preventDefault();
     console.log("clicked")
   
-    const name = document.getElementById('product-name').value.trim();
-    const description = document.getElementById('product-description').value.trim();
-    const category = document.getElementById('product-category').value.trim();
+    // const product_name = document.getElementById('product-name').value.trim();
+    // const description = document.getElementById('product-description').value.trim();
+    // const category_id = document.getElementById('product-category').value.trim();
   
-    if (name && description && category) {
-      const response = await fetch(`/api/products`, {
-        method: 'POST',
-        body: JSON.stringify({ name, description, category }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+    // if (product_name && description && category_id) {
+    //   console.log(product_name)
+    //   const response = await fetch(`/api/products`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({ product_name, description, category_id }),
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
         
-      });
+    //   });
       
     //   if (response.ok) {
     //     document.location.replace('/profile');
     //   } else {
     //     alert('Failed to create project');
     //   }
-    }
+    // }
   };
 
 
