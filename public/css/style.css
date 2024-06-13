@@ -27,12 +27,7 @@ header .container {
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-.container h2{
-    color: white;
-    display: flex;
-    padding-right: 50%;
 
-}
 
 /* Begin main section */
 main {
@@ -43,7 +38,6 @@ main {
 
 
 main .container{
-    background-color: rgb(180, 180, 180);
     display: flex;
     flex-wrap: wrap;
     font-style: oblique;
