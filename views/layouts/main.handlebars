@@ -12,7 +12,12 @@
   <header>
     <div class="container">
       <h2><a href="/">Welcome to Traders Johns', the ebay of organic foods!</a></h2>
+      {{#if logged_in}}
+      <a href="/profile">profile</a> |
+      <button class="logout-btn" id="logout">logout</button>
+      {{else}}
       <a href="/login" class="login-signup">Login or Signup</a>    
+      {{/if}}
   </header>
 
   {{!-- Begin main section --}}

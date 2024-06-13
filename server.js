@@ -8,17 +8,19 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
+require('dotenv').config()
+// Added secret variable for sess object
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESS_SECRET,
   cookie: {
-    maxAge: 300000,
+    maxAge: 60 * 60 * 1_000,
     httpOnly: true,
     secure: false,
-    sameSite: 'strict',
+    sameSite: false,
   },
   resave: false,
   saveUninitialized: true,
