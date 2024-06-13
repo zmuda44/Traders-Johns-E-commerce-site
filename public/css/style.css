@@ -20,6 +20,7 @@ header {
 }
 
 header .container {
+    color: white;
     display: flex;
     justify-content: space-between;
     font-style: oblique;
@@ -44,6 +45,10 @@ main .container{
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 /* Card container */
+
+body{
+    background-color: rgb(204, 204, 204);
+}
 
 .card-container {
     display: flex;
