@@ -19,33 +19,21 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {logged_in: req.session.logged_in});
 })
 
 router.get('/profile', async (req, res) => {
     try {        
-        
-
-        
         const productData = await Product.findAll();
         
         const products = productData.map((product) => product.get({ plain: true }));
 
-        res.render('profile', { products });
+        res.render('profile', { products, logged_in: req.session.logged_in });
     }
     catch (err) {
         res.status(500).json(err);
     }
 })
-router.get('/logout', (req, res) => {
-    if (req.session.logged_in) {
-        req.session.destroy(() => {
-        res.redirect('/login');
-        });
-    }
-    else {
-        res.redirect('/login');
-    }
-});
+
 
 module.exports = router;
