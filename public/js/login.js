@@ -20,7 +20,7 @@ const loginUser = async (e) => {
             })
             console.log(response);
             if (response.ok) {
-                document.location.replace('/');
+                document.location.replace('/profile');
             } else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.message || response.statusText}`);

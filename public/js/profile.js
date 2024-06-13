@@ -1,6 +1,3 @@
-
-
-
 const createNewProduct = (event) => {
     event.preventDefault();
     console.log("clicked")
