@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(204).end();
     });
   } catch (error) {
     console.error('Failed to create new user', error);
@@ -20,16 +20,18 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-
+  console.log(req);
   try {
     const username = req.body.username;
     const password = req.body.password;
 
     const userData = await User.findOne({ where: { username: username } });
     if (!userData) {
-      return res.status(401).json({ message: "Invalid username." });
+      return       res
+      .status(400)
+      .json({ message: 'Incorrect username or password, please try again' });
     }
-    const validPassword = await userData.checkPassword(password);
+    const validPassword = userData.checkPassword(password);
 
     if (!validPassword) {
       res
@@ -39,11 +41,11 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      console.log(userData.dataValues);
       req.session.user_id = userData.dataValues.id;
       req.session.logged_in = true;
-      console.log(req.session);
-      console.log(req.session.id);
+
+      res.status(204).end();
+      
     });
 
   } catch (error) {
