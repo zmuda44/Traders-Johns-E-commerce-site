@@ -11,10 +11,10 @@
   {{!-- Begin header section --}}
   <header>
     <div class="container">
-      <h2><a href="/">Welcome to Traders Johns', the ebay of organic foods!</a></h2>
+      <h2><a href="/">Welcome {{user.username}}to Traders Johns', the ebay of organic foods!</a></h2>
       {{#if logged_in}}
       <a href="/profile">profile</a> |
-      <button class="logout-btn" id="logout">logout</button>
+      <button class="logout-btn">logout</button>
       {{else}}
       <a href="/login" class="login-signup">Login or Signup</a>    
       {{/if}}
@@ -24,5 +24,8 @@
   <main>
     <div class="container">{{{ body }}}</div>
   </main>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
