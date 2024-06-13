@@ -12,6 +12,7 @@
 /* Begin header section */
 
 header {
+    color: white;
     background-color: lightcoral;
     margin: 20px 0;
     border-top: 2px solid black;
@@ -28,7 +29,14 @@ header .container {
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button:hover {background-color: #e7e7e7;}
+  
 
 /* Begin main section */
 main {
