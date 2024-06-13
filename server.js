@@ -43,7 +43,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+//When we know that we are done with the models change to force false
+console.log("MAKE SURE TO CHANGE TO FORCE TRUE AND IN RENDER GET RID OF NPM ")
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
