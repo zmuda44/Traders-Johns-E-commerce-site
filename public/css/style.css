@@ -29,6 +29,7 @@ header .container {
 
 .container h2{
     display: flex;
+    padding-right: 5%;
 
 }
 
@@ -55,7 +56,7 @@ main .container{
 }
 
 .card {
-    background-color: rgb(205, 255, 255);
+    background-color: rgb(231, 255, 255);
     width: 200px;
     margin: 5px;
     border: solid;
