@@ -5,6 +5,7 @@
 }
 
 .container {
+    color: white;
     max-width: 1200px;
     margin: auto;    
 }
@@ -27,6 +28,16 @@ header .container {
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
+.container button {
+        background-color: lightcoral;
+        color: black;
+        border: 2px solid #555555;
+      }
+      
+      .container button:hover {
+        background-color: #555555;
+        color: white;
+}
 
 /* Begin main section */
 main {
@@ -35,6 +46,10 @@ main {
 
 }
 
+.container input{
+    display: flex;
+    justify-content: center;
+}
 
 main .container{
     display: flex;
@@ -44,6 +59,8 @@ main .container{
 }
 /* Card container */
 
+
+/*page background color*/
 body{
     background-color: rgb(204, 204, 204);
 }
@@ -55,6 +72,7 @@ body{
 }
 
 .card {
+    background-image: url(john.jpg);
     background-color: rgb(231, 255, 255);
     width: 200px;
     margin: 5px;
