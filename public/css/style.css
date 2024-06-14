@@ -5,6 +5,7 @@
 }
 
 .container {
+    color: black;
     max-width: 1200px;
     margin: auto;    
 }
@@ -21,22 +22,24 @@ header {
 }
 
 header .container {
-    color: white;
     display: flex;
     justify-content: space-between;
     font-style: oblique;
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
-
-.button {
-    background-color: white;
-    color: black;
-    border: 2px solid #e7e7e7;
-  }
-  
-  .button:hover {background-color: #e7e7e7;}
-  
+.container button {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        float: inline-start;
+        width: 110px;
+      }
+      
+      .container button:hover {
+        background-color: lightcoral;
+        color: white;
+}
 
 /* Begin main section */
 main {
@@ -45,6 +48,10 @@ main {
 
 }
 
+.container input{
+    display: flex;
+    justify-content: center;
+}
 
 main .container{
     display: flex;
@@ -54,6 +61,8 @@ main .container{
 }
 /* Card container */
 
+
+/*page background color*/
 body{
     background-color: rgb(204, 204, 204);
 }
@@ -65,6 +74,7 @@ body{
 }
 
 .card {
+    color: black;
     background-color: rgb(231, 255, 255);
     width: 200px;
     margin: 5px;
