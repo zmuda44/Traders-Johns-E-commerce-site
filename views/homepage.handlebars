@@ -1,4 +1,18 @@
+<div class="categories">
 <h2>Current Products</h2>
+<button class="category-names">Produce</button>
+<button class="category-names">Meat</button>
+<button class="category-names">Seafood</button>
+<button class="category-names">Dairy</button>
+<button class="category-names">Snacks</button>
+<button class="category-names">Dry-Goods</button>
+<button class="category-names">Canned-Goods</button>
+<button class="category-names">Condiments</button>
+<button class="category-names">Bakery</button>
+<button class="category-names">Cereal</button>
+<button class="category-names">Frozen-Goods</button>
+
+</div>
   {{!-- <p>make if then statement to say login to see prices</p> --}}
 
 <div class="card-container">
@@ -8,7 +22,11 @@
         <p class="product-id">Product id: {{id}}</p>     
         <h3 class="product-name">{{product_name}}</h3>     
         <p class="product-description">{{description}}</p>     
-        <p class="product-price">$ {{price}} </p>     
+      {{#if logged_in}}
+        <p class="product-price">$ {{price}} </p> 
+      {{else}}
+      <p id="product-elseprice">login to see price</p> 
+      {{/if}}    
         <p class="product-category">Category</p>  
       </div>      
     {{/each}}    

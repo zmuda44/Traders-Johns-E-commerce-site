@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Product, User } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Product, User, Category } = require('../../models');
 
 
 
@@ -18,6 +17,20 @@ router.post('/', async (req, res) => {
     }
 
 });
+
+router.get('/homepage', async (req,res) =>{
+  try {
+    const category= req.params.category_name;
+    const productData= await Category.findAll({where: {category: category}});
+    
+    if(productData){
+
+    }
+
+  }catch (error){
+    res.status(500).json(err);
+  }
+})
 module.exports = router;
 
 // router.post('/', withAuth, async (req, res) => {
