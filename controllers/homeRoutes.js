@@ -55,13 +55,29 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/products/:category_id', async (req,res) =>{
     try {
-      let products = await Product.findAll({ where: {category_id: req.params.category_id}})
-      products = products.map(product => product.get({plain:true }));
-      res.render('homepage', {products})
+        let products = await Product.findAll({ where: {category_id: req.params.category_id}})
+        products = products.map(product => product.get({plain:true }));
+        res.render('homepage', {products})
     }catch (error){
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
   })
+
+router.get('/checkout/:product_id', async (req, res) => {
+    try {
+        let productData = await Product.findByPk(req.params.product_id, {
+            include: [{ model: User, attributes: ['username'] }]
+        })
+        
+        let product = productData.get({ plain: true });
+
+        console.log(product)
+
+    }
+    catch (error) {
+
+    }
+})
 
 
 //Route and converter to convert USD to euros

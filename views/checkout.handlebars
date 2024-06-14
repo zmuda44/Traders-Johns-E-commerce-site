@@ -1,0 +1,20 @@
+<div class="card-container">
+  {{!-- Show current products as cards. If logged in, show prices, otherwise do not show prices. --}}  
+    {{#each products as |product|}}
+      <div class="card">
+        <p class="product-id" value="{{id}}">Product id: {{id}}</p>     
+        <h3 class="product-name">{{product_name}}</h3>     
+        <p class="product-description">{{description}}</p>
+          
+        <p class="product-price">$ {{price}} </p>     
+        <p class="product-category">{{category.category_name}}</p>  
+      </div>      
+    {{/each}}    
+</div>
+
+
+
+
+
+
+
