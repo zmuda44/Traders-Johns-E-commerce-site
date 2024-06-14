@@ -16,8 +16,8 @@
   {{!-- <p>make if then statement to say login to see prices</p> --}}
 
 <div class="convert">
-  <p>Show price euros</p>
-  <a href="/euros"><button id="convert-currency">€</button></a>  
+  <p>Show price in USD</p>
+  <a href="/"><button id="convert-currency">$</button></a>  
 </div>
 
 <div class="card-container">
@@ -28,11 +28,13 @@
         <h3 class="product-name">{{product_name}}</h3>     
         <p class="product-description">{{description}}</p>
           
-        <p class="product-price">$ {{price}} </p>     
+        <p class="product-price">€ {{convertedPrice}} </p>     
         <p class="product-category">{{category.category_name}}</p>  
       </div>      
     {{/each}}    
 </div>
+
+<div>{{convertedPrice}}</div>
 
 <script src="/js/homepage.js"></script>
 
