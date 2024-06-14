@@ -32,8 +32,8 @@ header .container {
         background-color: white;
         color: black;
         border: 2px solid #555555;
-        float: left;
-        width: 130px;
+        float: inline-start;
+        width: 110px;
       }
       
       .container button:hover {
