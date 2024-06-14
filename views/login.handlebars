@@ -2,6 +2,13 @@
 
   {{!-- both of the below had form action="POST" but a post method is made in the js file. See if this still works when completed --}}
 
+{{#if logged_in}}
+<div>logged in</div>
+
+
+
+{{else}}
+
 <div class="login">
   <h2>Login</h2>
   <form id="login-form">
@@ -40,6 +47,7 @@
 </div>
 
 </div>
+{{/if}}
 
 <script src="./js/login.js"></script>
 
