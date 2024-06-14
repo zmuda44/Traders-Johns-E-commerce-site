@@ -8,7 +8,7 @@ const { Product, User, Category } = require('../../models');
 router.post('/', async (req, res) => {
   console.log("hello")  
   try {
-      const newProduct = await Product.create(req.body);
+      const newProduct = await Product.create({...req.body, user_id:req.session.user_id});
       console.log(newProduct)
   
       res.status(200).json("hello");
@@ -18,15 +18,15 @@ router.post('/', async (req, res) => {
 
 });
 
-router.get('/:category_id', async (req,res) =>{
-  try {
-    let products = await Product.findAll({ where: {category_id: req.params.category_id}})
-    products = products.map(product => product.get({plain:true }));
-    res.render('homepage', {products})
-  }catch (error){
-    res.status(500).json(err);
-  }
-})
+// router.get('/:category_id', async (req,res) =>{
+//   try {
+//     let products = await Product.findAll({ where: {category_id: req.params.category_id}})
+//     products = products.map(product => product.get({ plain:true }));
+//     res.render('homepage', {products})
+//   }catch (error){
+//     res.status(500).json(err);
+//   }
+// })
 
 
 
