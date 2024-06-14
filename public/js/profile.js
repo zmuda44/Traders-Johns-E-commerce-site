@@ -1,6 +1,3 @@
-
-
-
 const createNewProduct = async (event) => {
     event.preventDefault();
 
