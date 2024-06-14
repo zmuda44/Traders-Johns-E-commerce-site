@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 const { Convert } = require("easy-currencies");
 
 
+//Get route to homepage
 router.get('/', async (req, res) => {
 
     try {
@@ -22,6 +23,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
 
 router.get('/login', (req, res) => {
     res.render('login', {logged_in: req.session.logged_in});
@@ -51,19 +53,38 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
-
-
 router.get('/products/:category_id', async (req,res) =>{
     try {
-      let products = await Product.findAll({ where: {category_id: req.params.category_id}})
-      products = products.map(product => product.get({plain:true }));
-      res.render('homepage', {products})
+        let products = await Product.findAll({ where: {category_id: req.params.category_id}})
+        products = products.map(product => product.get({plain:true }));
+        res.render('homepage', {products})
     }catch (error){
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
   })
 
-  const convertCurrency = async (price) => {
+router.get('/checkout/:product_id', async (req, res) => {
+    try {
+        let productData = await Product.findByPk(req.params.product_id, {
+            include: [{ model: User, attributes: ['username'] }]
+        })
+        
+        let product = productData.get({ plain: true });
+
+        console.log(product)
+
+        res.render('checkout', product)
+
+    }
+    catch (error) {
+
+    }
+})
+
+
+//Route and converter to convert USD to euros
+
+const convertCurrency = async (price) => {
     try {
         // Assuming you have a function Convert() that performs currency conversion
         const convertedPrice = await Convert(price).from("USD").to("EUR");
@@ -74,7 +95,7 @@ router.get('/products/:category_id', async (req,res) =>{
     }
 };
 
-  router.get('/euros', async (req, res) => {
+router.get('/euros', async (req, res) => {
 
     try {
         const productData = await Product.findAll({
