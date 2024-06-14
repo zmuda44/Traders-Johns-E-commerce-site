@@ -71,7 +71,7 @@ router.get('/checkout/:product_id', async (req, res) => {
         
         let product = productData.get({ plain: true });
 
-        console.log(product)
+        res.render('checkout', product)
 
     }
     catch (error) {
