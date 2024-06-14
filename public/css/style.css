@@ -100,3 +100,7 @@ body{
     justify-content: space-between;
     margin: auto;
 }
+
+#product-elseprice {
+    font-style: normal;
+}

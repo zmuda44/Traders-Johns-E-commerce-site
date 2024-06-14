@@ -20,7 +20,7 @@ const loginUser = async (e) => {
             })
             console.log(response);
             if (response.ok) {
-                document.location.replace('/homepage');
+                document.location.replace('/profile');
             } else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.message || response.statusText}`);
@@ -49,7 +49,7 @@ const signUpUser = async function (e) {
             headers: { 'Content-Type': 'application/json' },
             credentials: 'same-origin',
         });
-
+        console.log(response);
         if (response.ok) {
             document.location.replace('/profile');
         } else {
