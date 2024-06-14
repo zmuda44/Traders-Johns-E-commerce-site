@@ -46,7 +46,10 @@ router.get('/profile', withAuth, async (req, res) => {
         const user = userData.get({ plain: true });
         const products = productData.map((product) => product.get({ plain: true }));
 
-        res.render('profile', { ...user, products, logged_in: req.session.logged_in });
+        const userProducts = products.filter(product => product.user_id === req.session.user_id)
+        console.log("user products", userProducts)
+
+        res.render('profile', { ...user, products, userProducts, logged_in: req.session.logged_in });
     }
     catch (err) {
         res.status(500).json(err);
