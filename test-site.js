@@ -1,4 +1,6 @@
 import loadtest from 'loadtest'
+// const loadtest = require('loadtest')
+
 const options = {
     url: 'https://traders-johns-e-commerce-site.onrender.com/',
     concurrency: 10,

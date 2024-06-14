@@ -51,18 +51,16 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
-router.get('/', async (req,res) =>{
+
+
+router.get('/products/:category_id', async (req,res) =>{
     try {
-      const category= req.params.category_name;
-      const productData= await Category.findAll({where: {category: category}});
-      if(productData){
-  
-      }
-  
+      let products = await Product.findAll({ where: {category_id: req.params.category_id}})
+      products = products.map(product => product.get({plain:true }));
+      res.render('homepage', {products})
     }catch (error){
       res.status(500).json(err);
     }
   })
-
 
 module.exports = router;
