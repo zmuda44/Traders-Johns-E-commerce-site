@@ -32,6 +32,7 @@ header .container {
         background-color: lightcoral;
         color: black;
         border: 2px solid #555555;
+        float: left;
       }
       
       .container button:hover {
@@ -72,6 +73,7 @@ body{
 }
 
 .card {
+    color: black;
     background-color: rgb(231, 255, 255);
     width: 200px;
     margin: 5px;
