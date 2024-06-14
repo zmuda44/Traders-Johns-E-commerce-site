@@ -72,7 +72,6 @@ body{
 }
 
 .card {
-    background-image: url(john.jpg);
     background-color: rgb(231, 255, 255);
     width: 200px;
     margin: 5px;
