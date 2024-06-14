@@ -6,6 +6,7 @@ const createNewProduct = async (event) => {
     const description = document.getElementById('product-description').value.trim();
     const price = document.getElementById('price').value.trim();
     const category_id = document.getElementById('product-category').value.trim();
+    const user_id = document.getElementById('user-id').innerHTML;
   
     if (product_name && description && price && category_id && user_id) {
       console.log(product_name)
