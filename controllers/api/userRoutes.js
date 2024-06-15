@@ -3,6 +3,8 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
+    // const allUsers = await User.findAll();
+    // console.log(allUsers);
     console.log(req.body);
     const userData = await User.create(req.body);
     console.log(userData);
@@ -15,7 +17,7 @@ router.post('/', async (req, res) => {
     });
   } catch (error) {
     console.error('Failed to create new user', error);
-    res.status(500).json({message: 'failed to create user'});
+    res.status(500).json({ message: 'failed to create user' });
   }
 });
 
@@ -27,9 +29,9 @@ router.post('/login', async (req, res) => {
 
     const userData = await User.findOne({ where: { username: username } });
     if (!userData) {
-      return       res
-      .status(400)
-      .json({ message: 'Incorrect username or password, please try again' });
+      return res
+        .status(400)
+        .json({ message: 'Incorrect username or password, please try again' });
     }
     const validPassword = userData.checkPassword(password);
 
@@ -44,8 +46,8 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.dataValues.id;
       req.session.logged_in = true;
 
-      res.status(204).end();
-      
+      res.status(204).send('Login Successful!');
+
     });
 
   } catch (error) {
@@ -58,7 +60,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end()
     })
-  }else {
+  } else {
     res.status(404).end()
   }
 });
