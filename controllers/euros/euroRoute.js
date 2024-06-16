@@ -41,5 +41,24 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/category/:category_id', async (req,res) => {
+    try {
+        let productData = await Product.findAll({ where: {category_id: req.params.category_id}})
+        const productPromises = productData.map(async (product) => {
+            const convertedPrice = await convertCurrency(product.price);
+            return {
+                ...product.get({ plain: true }),
+                convertedPrice
+            };
+        });
+
+        const products = await Promise.all(productPromises);       
+
+        res.render('euros-homepage', { products, logged_in: req.session.logged_in });
+    } catch(err) {
+        res.status(500).json(err);
+    }
+})
+
 
 module.exports = router
