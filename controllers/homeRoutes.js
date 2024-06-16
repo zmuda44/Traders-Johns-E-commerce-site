@@ -6,7 +6,6 @@ const { Convert } = require("easy-currencies");
 
 //Get route to homepage
 router.get('/', async (req, res) => {
-
     try {
         const productData = await Product.findAll({
             include: [{
@@ -24,11 +23,12 @@ router.get('/', async (req, res) => {
     }
 })
 
-
+//Get route to login page
 router.get('/login', (req, res) => {
     res.render('login', {logged_in: req.session.logged_in});
 })
 
+//Get route to profile page
 router.get('/profile', withAuth, async (req, res) => {
     try {        
         const userData = await User.findByPk(req.session.user_id, {
@@ -56,6 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
+//Get route for when button is pressed on hompage, only show that category on this page
 router.get('/products/:category_id', async (req,res) =>{
     try {
         let products = await Product.findAll({ where: {category_id: req.params.category_id}})
@@ -66,6 +67,7 @@ router.get('/products/:category_id', async (req,res) =>{
     }
   })
 
+//Get route for checkout page when clicking on individual item
 router.get('/checkout/:product_id', async (req, res) => {
     try {
         let productData = await Product.findByPk(req.params.product_id, {
@@ -73,20 +75,15 @@ router.get('/checkout/:product_id', async (req, res) => {
         })
         
         let product = productData.get({ plain: true });
-
-        console.log(product)
-
         res.render('checkout', product)
-
     }
     catch (error) {
-
+        res.status(500).json(err);
     }
 })
 
 
 //Route and converter to convert USD to euros
-
 const convertCurrency = async (price) => {
     try {
         // Assuming you have a function Convert() that performs currency conversion
