@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Product, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
-const { Convert } = require("easy-currencies");
+
 
 
 //Get route to homepage
@@ -56,8 +56,10 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
-//Get route for when button is pressed on hompage, only show that category on this page
-router.get('/products/:category_id', async (req,res) =>{
+
+
+
+router.get('/category/:category_id', async (req,res) =>{
     try {
         let products = await Product.findAll({ where: {category_id: req.params.category_id}})
         products = products.map(product => product.get({plain:true }));
@@ -66,60 +68,5 @@ router.get('/products/:category_id', async (req,res) =>{
         res.status(500).json(err);
     }
   })
-
-//Get route for checkout page when clicking on individual item
-router.get('/checkout/:product_id', async (req, res) => {
-    try {
-        let productData = await Product.findByPk(req.params.product_id, {
-            include: [{ model: User, attributes: ['username'] }]
-        })
-        
-        let product = productData.get({ plain: true });
-        res.render('checkout', product)
-    }
-    catch (error) {
-        res.status(500).json(err);
-    }
-})
-
-
-//Route and converter to convert USD to euros
-const convertCurrency = async (price) => {
-    try {
-        // Assuming you have a function Convert() that performs currency conversion
-        const convertedPrice = await Convert(price).from("USD").to("EUR");
-        return convertedPrice;
-    } catch (error) {
-        console.error("Error converting currency:", error);
-        throw error;
-    }
-};
-
-router.get('/euros', async (req, res) => {
-
-    try {
-        const productData = await Product.findAll({
-            include: [{
-                model: Category,
-                attributes: ['category_name'],
-            }] // Include the Category model to fetch associated categories
-        });
-
-        const productPromises = productData.map(async (product) => {
-            const convertedPrice = await convertCurrency(product.price);
-            return {
-                ...product.get({ plain: true }),
-                convertedPrice
-            };
-        });
-
-        const products = await Promise.all(productPromises);
-       
-
-        res.render('euros-homepage', { products, logged_in: req.session.logged_in });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
 
 module.exports = router;
