@@ -56,9 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 })
 
-
-
-
+//Get route to category page when clicking button on homepage
 router.get('/category/:category_id', async (req,res) =>{
     try {
         let products = await Product.findAll({ where: {category_id: req.params.category_id}})
