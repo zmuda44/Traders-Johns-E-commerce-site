@@ -7,7 +7,7 @@
 .container {
     color: black;
     max-width: 1200px;
-    margin: auto;    
+    margin: auto;
 }
 
 /* Begin header section */
@@ -28,17 +28,18 @@ header .container {
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
+
 .container button {
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-        float: inline-start;
-        width: 110px;
-      }
-      
-      .container button:hover {
-        background-color: lightcoral;
-        color: white;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    float: inline-start;
+    width: 110px;
+}
+
+.container button:hover {
+    background-color: lightcoral;
+    color: white;
 }
 
 /* Begin main section */
@@ -48,29 +49,38 @@ main {
 
 }
 
-.container input{
+.container input {
     display: flex;
     justify-content: center;
 }
 
-main .container{
+main .container {
     display: flex;
     flex-wrap: wrap;
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif
 }
+
 /* Card container */
 
 
 /*page background color*/
-body{
+body {
     background-color: rgb(204, 204, 204);
 }
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;  
+    justify-content: center;
+
+}
+.card:hover{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .card {
@@ -92,6 +102,7 @@ body{
 .card p {
     margin: 5px 0;
 }
+
 /* Set max size for images */
 .card img {
     width: 100px;
@@ -113,23 +124,26 @@ body{
 }
 
 /* Create new product form */
-.create-new-product{
+.create-new-product {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: solid ;
+    border: solid;
 }
-#new-product{
+
+#new-product {
     display: block;
 
 }
-.form-section{
+
+.form-section {
     display: flex;
     justify-content: start;
     flex-direction: column;
     margin: 5px 5px;
     align-items: stretch;
 }
-.product-create-btn{
+
+.product-create-btn {
     width: 98%;
 }

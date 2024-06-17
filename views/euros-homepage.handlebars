@@ -25,10 +25,10 @@
   {{#each products as |product|}}
   <div class="card" value="{{id}}">
     <h3 class="product-name">{{product_name}}</h3>
-    <img src="/images/{{image}}.jpg">
     <p class="product-description">{{description}}</p>
     <p class="product-price">€ {{convertedPrice}} </p>
     <p class="product-category">{{category.category_name}}</p>
+    <img src="/images/{{category.category_name}}.jpg">
   </div>
   {{/each}}
 </div>
