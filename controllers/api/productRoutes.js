@@ -18,12 +18,17 @@ router.post('/', async (req, res) => {
 });
 
 //Get route for when button is pressed on hompage, only show that category on this page
-router.get('/:category_id', async (req,res) =>{
+router.get('/:category_id', async (req,res) => {
   try {
-      let products = await Product.findAll({ where: {category_id: req.params.category_id}})
+      let products = await Product.findAll({ where: {category_id: req.params.category_id}, 
+        include: [{ 
+          model: Category,
+          attributes: ['category_name'],
+        }]
+      })
       products = products.map(product => product.get({plain:true }));
-      res.render('homepage', {products})
-  }catch (error){
+      res.render('homepage', { products })
+  } catch (error){
       res.status(500).json(err);
   }
 })
