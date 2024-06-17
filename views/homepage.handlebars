@@ -1,3 +1,5 @@
+
+{{!-- Buttons to show categories --}}
 <div class="categories">
 <h2>Current Products</h2>
 <button class="category-names" value="1">Produce</button>
@@ -11,17 +13,16 @@
 <button class="category-names" value="9">Bakery</button>
 <button class="category-names" value="10">Cereal</button>
 <button class="category-names" value="11">Frozen-Goods</button>
-
 </div>
-  {{!-- <p>make if then statement to say login to see prices</p> --}}
 
+{{!-- Button to convert dollars to euros --}}
 <div class="convert">
   <p>Click to show price in euros</p>
   <a href="/euros"><button id="convert-currency">€</button></a>  
 </div>
 
+{{!-- Product cards of all products currently available --}}
 <div class="card-container">
-  {{!-- Show current products as cards. If logged in, show prices, otherwise do not show prices. --}}  
     {{#each products as |product|}}
       <div class="card" value="{{id}}">
         <h3 class="product-name">{{product_name}}</h3>     

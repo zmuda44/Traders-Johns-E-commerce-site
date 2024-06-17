@@ -1,14 +1,8 @@
 <div class="login-signup-section">
 
-  {{!-- both of the below had form action="POST" but a post method is made in the js file. See if this still works when completed --}}
-
-{{#if logged_in}}
+ {{#if logged_in}}
 <div>logged in</div>
-
-
-
 {{else}}
-
 <div class="login">
   <h2>Login</h2>
   <form id="login-form">
@@ -23,9 +17,7 @@
     <button id="login-btn">Login</button>  
   </form>
 </div>
-
 <br>
-
 <div class="signup">
   <h2>Sign up</h2>
   <form id="login-form">
@@ -45,7 +37,6 @@
     
   </form>
 </div>
-
 </div>
 {{/if}}
 
