@@ -111,3 +111,25 @@ body{
 #product-elseprice {
     font-style: normal;
 }
+
+/* Create new product form */
+.create-new-product{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid ;
+}
+#new-product{
+    display: block;
+
+}
+.form-section{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin: 5px 5px;
+    align-items: stretch;
+}
+.product-create-btn{
+    width: 98%;
+}
