@@ -8,7 +8,7 @@
     border: solid;
     box-shadow: 20px black;
 }
-
+.create-new-product h3,
 .profile-section-block > h3 {
     background-color: black;
     color: white;

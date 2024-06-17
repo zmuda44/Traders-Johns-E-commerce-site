@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/ui.css">
   <link rel="stylesheet" href="/css/checkout.css">
   <link rel="stylesheet" href="/css/profile.css">
   <title>Traders Johns' Organic Food Marketplace</title>
 </head>
+
 <body>
 
   {{!-- Begin header section --}}
   <header>
-    <div class="container">
-      <h2><a href="/">Welcome to Traders Johns', the ebay of organic foods!</a></h2>
+    <div class="container title-container">
+      <h2>Welcome to Trader Johns'!</h2>
+      <h3>the ebay of organic foods!</h3>
+      <a href="/">
+        <button class="homepage-btn">Homepage</button>
+      </a>
       {{#if logged_in}}
-      <a href="/profile">profile</a> |
+      <a href="/profile">
+        <button class="homepage-btn">Profile</button>
+      </a> |
       <button class="logout-btn">logout</button>
       {{else}}
-      <a href="/login" class="login-signup">Login or Signup</a>    
+      <a href="/login" class="login-signup">
+        <button class="homepage-btn">Login or Sign-up</button>
+      </a>
       {{/if}}
   </header>
 
@@ -30,4 +41,5 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
 </html>

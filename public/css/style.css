@@ -14,7 +14,7 @@
 
 header {
     color: white;
-    background-color: lightcoral;
+    background-image: linear-gradient( rgb(241, 200, 200),lightcoral );
     margin: 20px 0;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -37,10 +37,7 @@ header .container {
     width: 110px;
 }
 
-.container button:hover {
-    background-color: lightcoral;
-    color: white;
-}
+
 
 /* Begin main section */
 main {
@@ -84,7 +81,6 @@ main .container {
 }
 
 
-/* Card container */
 
 
 /*page background color*/
@@ -92,21 +88,14 @@ body {
     background-color: rgb(204, 204, 204);
 }
 
+/* Card container */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
 }
-/* Added scaling on hover */
-.categories button:hover,
-.card:hover{
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-}
+
 
 .card {
     color: black;
