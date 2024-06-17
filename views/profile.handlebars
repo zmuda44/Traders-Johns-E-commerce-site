@@ -27,16 +27,11 @@
         <p class="product-price">$ {{userProduct.price}} </p>     
         <p class="product-category">{{userProduct.category.category_name}}</p>  
       {{/each}}
+    </div>
   </div>
 
-
-
-
-
+  <div class="create-new-product">
     <h3>Create a New Product:</h3>
-
-    {{!-- Make categories alphabetical --}}
-
     <form id="new-product">
       <div class="form-section">
         <label for="product-name">Product name:</label>
@@ -69,7 +64,15 @@
       <div class="form-section">
         <button class="product-create-btn">List a new product</button>
       </div>
-    </form>
+    </form>    
+  </div>
+
+
+
+
+    {{!-- Make categories alphabetical --}}
+
+
   </div>
 
 
