@@ -43,7 +43,12 @@ router.get('/', async (req, res) => {
 
 router.get('/category/:category_id', async (req,res) => {
     try {
-        let productData = await Product.findAll({ where: {category_id: req.params.category_id}})
+        let productData = await Product.findAll({ where: {category_id: req.params.category_id},
+        include: [{ 
+            model: Category,
+            attributes: ['category_name'],
+          }]
+        });
         const productPromises = productData.map(async (product) => {
             const convertedPrice = await convertCurrency(product.price);
             return {

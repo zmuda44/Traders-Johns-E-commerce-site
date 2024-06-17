@@ -27,6 +27,7 @@ router.get('/:category_id', async (req,res) => {
         }]
       })
       products = products.map(product => product.get({plain:true }));
+      console.log(products);
       res.render('homepage', { products })
   } catch (error){
       res.status(500).json(err);
