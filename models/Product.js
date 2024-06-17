@@ -11,6 +11,11 @@ Product.init(
       primaryKey: true,
       autoIncrement: true
     },
+    // Added image parameter for the images
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     product_name: {
       type: DataTypes.STRING,
       allowNull: false,

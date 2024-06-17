@@ -92,6 +92,11 @@ body{
 .card p {
     margin: 5px 0;
 }
+/* Set max size for images */
+.card img {
+    width: 100px;
+    height: 80px;
+}
 
 
 /* Login and Sign up forms */
