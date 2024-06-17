@@ -9,10 +9,10 @@
       <div class="card" value="{{id}}">
 
         <h3 class="product-name">{{product_name}}</h3>
-        <img src="/images/{{image}}.jpg">
         <p class="product-description">{{description}}</p>
         <p class="product-price">$ {{price}} </p>
         <p class="product-category">{{category.category_name}}</p>
+        <img src="/images/{{category.category_name}}.jpg">
       </div>
       {{/each}}
     </div>
@@ -20,11 +20,12 @@
 
   {{!-- User listed products currently available --}}
   <div class="user-products">
-    <h3>Current Products:</h3>
-    <div class="cards-container">
+    <h3>Current User Products:</h3>
+    <div class="card-container">
       {{#each userProducts as |userProduct|}}
       <div class="card" value="{{id}}">
       <h3 class="product-name">{{userProduct.product_name}}</h3>
+      <img src="/images/{{userProduct.category.category_name}}.jpg">
       <p class="product-description">{{userProduct.description}}</p>
       <p class="product-price">$ {{userProduct.price}} </p>
       <p class="product-category">{{userProduct.category.category_name}}</p>
