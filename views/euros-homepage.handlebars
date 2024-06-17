@@ -23,8 +23,7 @@
 <div class="card-container">
   {{!-- Show current products as cards. If logged in, show prices, otherwise do not show prices. --}}  
     {{#each products as |product|}}
-      <div class="card">
-        <p class="product-id">Product id: {{id}}</p>     
+      <div class="card" value="{{id}}">
         <h3 class="product-name">{{product_name}}</h3>     
         <p class="product-description">{{description}}</p>
           
