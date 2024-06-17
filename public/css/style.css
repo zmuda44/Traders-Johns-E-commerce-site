@@ -61,6 +61,29 @@ main .container {
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
+.homepage-main {
+    display: flex;
+}
+
+/* Begin aside */
+
+.homepage-main .categories {
+    display: block;
+    width: 25%;
+}
+
+/* Begin homepage main content */
+.main-homepage-content {
+    width: 75%;
+}
+
+.convert {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+
 /* Card container */
 
 
