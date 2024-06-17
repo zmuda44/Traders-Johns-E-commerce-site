@@ -1,3 +1,4 @@
+//Add new products to db and page from form
 const createNewProduct = async (event) => {
     event.preventDefault();
 
@@ -28,17 +29,19 @@ const createNewProduct = async (event) => {
   };
 
 
-
-
-
-
-
-
-
 document
   .querySelector('.product-create-btn')
   .addEventListener('click', createNewProduct);
 
-//   document
-//   .querySelector('.project-list')
-//   .addEventListener('click', delButtonHandler);
+//Go to product checkoutpage on click of card
+const cards = document.querySelectorAll('.card')
+
+function getProductId () {
+    const productId = this.getAttribute('value')
+    document.location.replace(`/checkout/${productId}`)
+}
+
+for (const card of cards) {
+    card.addEventListener('click', getProductId)
+}
+

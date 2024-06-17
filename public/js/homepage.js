@@ -2,8 +2,7 @@
 const cards = document.querySelectorAll('.card')
 
 function getProductId () {
-    const productIdEl = this.querySelector('.product-id')
-    const productId = productIdEl.getAttribute('value')
+    const productId = this.getAttribute('value')
     document.location.replace(`/checkout/${productId}`)
 }
 
