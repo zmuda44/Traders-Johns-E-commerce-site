@@ -1,9 +1,9 @@
 <div class="profile-section">
-  <h2>Welcome, {{username}}!</h2>
+  <h1>Welcome, {{username}}!</h1>
 
   {{!-- All products currently available --}}
-  <div class="all-products">
-    <h2>All products currently available</h2>
+  <div class="profile-section-block">
+    <h3>All products currently available</h3>
     <div class="card-container">
       {{#each products as |product|}}
       <div class="card" value="{{id}}">
@@ -19,7 +19,7 @@
   </div>
 
   {{!-- User listed products currently available --}}
-  <div class="user-products">
+  <div class="profile-section-block">
     <h3>Current User Products:</h3>
     <div class="card-container">
       {{#each userProducts as |userProduct|}}
