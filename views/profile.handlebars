@@ -6,8 +6,7 @@
     <h2>All products currently available</h2>  
     <div class="card-container">          
         {{#each products as |product|}}
-            <div class="card">
-                <p class="product-id">Product id: {{id}}</p>     
+            <div class="card" value="{{id}}">
                 <h3 class="product-name">{{product_name}}</h3>     
                 <p class="product-description">{{description}}</p>     
                 <p class="product-price">$ {{price}} </p>     
@@ -65,15 +64,8 @@
         <button class="product-create-btn">List a new product</button>
       </div>
     </form>    
-  </div>
-
-
-
-
-    {{!-- Make categories alphabetical --}}
-
-
-  </div>
+  </div>   
+</div>
 
 
 
