@@ -6,20 +6,24 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/checkout.css">
   <link rel="stylesheet" href="/css/profile.css">
-  <title>Traders Johns' Organic Food Marketplace</title>
+  <title>Trader Johns' Organic Food Marketplace</title>
 </head>
 <body>
 
   {{!-- Begin header section --}}
   <header>
-    <div class="container">
-      <h2><a href="/">Welcome to Traders Johns', the ebay of organic foods!</a></h2>
+    <img src="/images/logo.png" id="logo" alt="logo">
+    <div class="container" id="nav">
+      <h2><a href="/">Welcome to Trader Johns', the ebay of organic foods!</a></h2>
       {{#if logged_in}}
-      <a href="/profile">profile</a> |
+      <div class="button-div">
+        <a href="/profile" ><button id="profile-button">profile</button></a>
       <button class="logout-btn">logout</button>
+      </div>
       {{else}}
-      <a href="/login" class="login-signup">Login or Signup</a>    
+      <a href="/login" class="login-signup"><button>Login or Signup</button></a>    
       {{/if}}
+    </div>
   </header>
 
   {{!-- Begin main section --}}
@@ -30,4 +34,7 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+<footer>
+  <p></p>
+</footer>
 </html>

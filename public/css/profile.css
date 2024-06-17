@@ -14,3 +14,17 @@
     color: white;
 }
 
+#profile-button {
+    display: flex;
+    align-items: center;    
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    width: 80px;
+    padding: 20px 20px;
+}
+
+#profile-button:hover{
+    background-color: rgb(248, 152, 152);
+    color: white;
+}
