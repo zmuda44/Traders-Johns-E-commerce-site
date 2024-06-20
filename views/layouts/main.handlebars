@@ -20,21 +20,32 @@
   {{!-- Begin header section --}}
   <header>
     <div class="container title-container">
-      <h2>Welcome to Trader Johns'!</h2>
-      <h3>the ebay of organic foods!</h3>
-      <a href="/">
-        <button class="homepage-btn">Home</button>
-      </a>
-      {{#if logged_in}}
-      <a href="/profile">
-        <button class="homepage-btn">Profile</button>
-      </a> |
-      <button class="logout-btn">logout</button>
-      {{else}}
-      <a href="/login" class="login-signup">
-        <button class="homepage-btn">Login or Sign-up</button>
-      </a>
-      {{/if}}
+      <div class="branding-container">
+        <a href="/"><h2>Welcome to Trader Johns'!</h2></a>
+        <h3>the ebay of organic foods!</h3>
+      </div>
+
+      <div class="header-btn-container">
+        {{#if logged_in}}
+        <a href="/profile">
+          <button class="homepage-btn">Profile</button>
+        </a> 
+        <button class="logout-btn">Logout</button>
+        {{else}}
+        <a href="/login" class="login-signup">
+          <button class="homepage-btn">Login or Sign-up</button>
+        </a>
+        {{/if}}
+      </div>
+
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+
   </header>
 
   {{!-- Begin main section --}}
@@ -44,6 +55,8 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+<script src="/js/hamburger.js"></script>
 </body>
 
 </html>
