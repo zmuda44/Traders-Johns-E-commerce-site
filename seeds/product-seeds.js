@@ -37,9 +37,9 @@ const productData = [
     category_id: 2
   },
   {
-    product_name: 'Talapia',
+    product_name: 'Tilapia',
     image: 'fish',
-    description: 'Idividualy packaged talapia fillets.',
+    description: 'Idividualy packaged tilapia fillets.',
     price: 15,
     category_id: 3
   },
@@ -72,9 +72,9 @@ const productData = [
     category_id: 5
   },
   {
-    product_name: 'Spagetti',
+    product_name: 'Spaghetti',
     image: 'spaghetti',
-    description: '1 box of spagetti.',
+    description: '1 box of spaghetti.',
     price: 2,
     category_id: 6
   },
