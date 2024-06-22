@@ -110,7 +110,7 @@ main .container {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: center;
 }
 
 .card {
